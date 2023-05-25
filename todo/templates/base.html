@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title >{% block title %} - Todo List{%endblock%}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="PROYECTO_TAREAS_ONLINE\todoer\todo\static\checklist_106575.ico"/>
+</head>
+    <nav>
+        <h1 id="title">Todo List</h1>
+        <ul id="opciones_de_sesion">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-circle"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3"></circle><path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662" ></path></svg>
+            {% if g.user %}
+                <li><span>{{ g.user['username'] }}</span></li>
+                <li><a href="{{ url_for('auth.logout') }}">Cerrar sesión</a></li>
+                
+            {% else %}
+                <li><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
+                <li><a href="{{ url_for('auth.login') }}">Iniciar seción</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <section class="content">
+        <header>
+            {% block header %} 
+            {% endblock %}
+        </header>
+        {%for message in get_flashed_messages()%}
+        <div class="flash">{{message}}</div>
+        {% endfor %}
+        {% block content %} 
+        {% endblock %}
+    </section>
+
