@@ -33,7 +33,6 @@ pypiwin32==223
 PyRect==0.2.0
 PyScreeze==0.1.28
 python-dateutil==2.8.2
-python-dotenv==1.0.0
 python-http-client==3.3.7
 sqlparse==0.4.3
 starkbank-ecdsa==2.2.0
