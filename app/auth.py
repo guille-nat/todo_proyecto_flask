@@ -5,7 +5,7 @@ from flask import (
 
 from werkzeug.security import check_password_hash, generate_password_hash #el primero lo que haces verificar si una contraseña es igual a otra y el segundo encripta esa contraseña que le envió.
 
-from todo.db import get_db
+from app.db import get_db
 
 bp = Blueprint('auth',__name__, url_prefix='/auth')
 

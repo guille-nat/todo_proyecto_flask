@@ -23,8 +23,6 @@ def create_app():
     app.register_blueprint(auth.bp)
     app.register_blueprint(todo.bp)
 
-    @app.route('/hola')
-    def hola():
-        return 'Cahnchito Feliz'
+    
     
     return app
