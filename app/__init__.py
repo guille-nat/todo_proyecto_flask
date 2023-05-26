@@ -15,13 +15,13 @@ def create_app():
 
     from . import db
 
-    db.init_app(myapp)
+    db.init_app(app)
 
 
     from. import auth
     from. import myapp
-    myapp.register_blueprint(auth.bp)
-    myapp.register_blueprint(myapp.bp)
+    app.register_blueprint(auth.bp)
+    app.register_blueprint(myapp.bp)
 
     
     
