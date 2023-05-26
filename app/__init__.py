@@ -19,9 +19,9 @@ def create_app():
 
 
     from. import auth
-    from. import todo
+    from. import app
     app.register_blueprint(auth.bp)
-    app.register_blueprint(todo.bp)
+    app.register_blueprint(app.bp)
 
     
     
